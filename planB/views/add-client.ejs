@@ -1,0 +1,114 @@
+<!-- views/add-client.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        form {
+            margin: 4vh auto;
+            padding: 20px;
+            width: 60%;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Client</h1>
+
+    <form action="/admin/add-client" method="POST">
+        <label for="ID">ID:</label>
+        <input type="text" id="ID" name="ID" required>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="caseNo">Case No:</label>
+        <input type="text" id="caseNo" name="caseNo" required>
+
+        <label for="caseDescription">Case Description:</label>
+        <textarea id="caseDescription" name="caseDescription" rows="4" required></textarea>
+
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" required>
+
+        <label for="Gender">Gender:</label>
+        <input type="text" id="Gender" name="Gender" required>
+
+        <label for="Address">Address:</label>
+        <input type="text" id="Address" name="Address" required>
+
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" name="Email" required>
+
+        <label for="Phone">Phone:</label>
+        <input type="text" id="Phone" name="Phone" required>
+
+        <label for="Attorney">Attorney:</label>
+        <input type="text" id="Attorney" name="Attorney" required>
+
+        <label for="HearingDate">Hearing Date:</label>
+        <input type="date" id="HearingDate" name="HearingDate" required>
+
+        <label for="Documents">Documents:</label>
+        <input type="text" id="Documents" name="Documents" required>
+
+        <label for="Notes">Notes:</label>
+        <textarea id="Notes" name="Notes" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

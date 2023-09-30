@@ -1,0 +1,22 @@
+{
+  "name": "planb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fabric-ca-client": "^2.2.4",
+    "fabric-network": "^2.2.4",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7"
+  }
+}
