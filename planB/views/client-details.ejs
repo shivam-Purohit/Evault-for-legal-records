@@ -1,0 +1,109 @@
+<!-- views/client-details.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        table {
+            margin: 4vh auto;
+            border-collapse: collapse;
+            width: 60%;
+
+        }
+
+        th, td {
+            padding: 23px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client Details</h1>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td><%= clientDetails.ID %></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><%= clientDetails.FirstName %></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><%= clientDetails.LastName %></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><%= clientDetails.Age %></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><%= clientDetails.Gender %></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><%= clientDetails.Address %></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><%= clientDetails.Email %></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><%= clientDetails.Phone %></td>
+        </tr>
+        <tr>
+            <td>Attorney</td>
+            <td><%= clientDetails.Attorney %></td>
+        </tr>
+        <tr>
+            <td>Hearing Date</td>
+            <td><%= clientDetails.HearingDate %></td>
+        </tr>
+        <tr>
+            <td>Documents</td>
+            <td><%= clientDetails.Documents %></td>
+        </tr>
+        <tr>
+            <td>Notes</td>
+            <td><%= clientDetails.Notes %></td>
+        </tr>
+        <tr>
+            <td>Case Description</td>
+            <td><%= clientDetails.caseDescription %></td>
+        </tr>
+
+        <!-- Add more data points here as needed -->
+      
+    </table>
+   
+    <!-- Add more HTML elements to display other data -->
+</body>
+</html>

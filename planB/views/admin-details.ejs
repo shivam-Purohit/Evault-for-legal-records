@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    h1 {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        margin-top: 0;
+    }
+
+    table {
+        margin: 4vh auto;
+        border-collapse: collapse;
+        width: 60%;
+
+    }
+
+    th, td {
+        padding: 23px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+    }
+</style>
+<body>
+    <h1>Clients Enrolled from this admin</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Attorney</th>
+                <th>Case No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clients.forEach(function(client, index) { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= client.FirstName %></td>
+                    <td><%= client.LastName %></td>
+                    <td><%= client.Attorney %></td>
+                    <td><%= client.caseNo %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+
+    <a href="/admin/add-client" style="text-decoration: none;">
+        <button style="padding: 10px 20px; font-size: 18px; margin: 10px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
+            Add Client
+        </button>
+    </a>
+    
+   
+</body>
+</html>
