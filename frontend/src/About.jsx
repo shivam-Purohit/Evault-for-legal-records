@@ -15,7 +15,7 @@ const About = () => {
             <div className='row'>
               {
                  Data.map((val,ind)=>{
-                  return <Card imgsrc={val.imgsrc} 
+                  return <Card key={ind} imgsrc={val.imgsrc} 
                   title={val.title}/>
                  })
               }
