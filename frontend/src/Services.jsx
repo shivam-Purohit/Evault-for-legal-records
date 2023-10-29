@@ -1,8 +1,11 @@
 import React from 'react'
+import MainLogin from './component/MainLogin'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <MainLogin></MainLogin>
+    </div>
   )
 }
 
