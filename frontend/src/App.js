@@ -4,9 +4,12 @@ import Home from './Home';
 import About from './About';
 import Services from './Services';
 import Navbar from './Navbar';
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import {Routes,Route} from 'react-router-dom';
+import Admin from './component/Admin';
+import CreateCase from './component/CreateCase';
+import Client from './component/Client';
 function App() {
+  
   return (
     <div>
     <Navbar/> 
@@ -14,6 +17,10 @@ function App() {
       <Route exact path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
       <Route path='/services' element={<Services />} />
+      <Route path='/admin' element={<Admin />} />
+      <Route path='client' element={<Client></Client>}/>
+      <Route path='/admin/register' element={<CreateCase/>} />
+      
     </Routes>
     
     </div>
