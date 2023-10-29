@@ -1,0 +1,71 @@
+/* Admin.css */
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  h2 {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  /* Table styles */
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  /* Additional styles */
+  .detail {
+    padding: 10px;
+  }
+  
+  .detail h3 {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  /* Apply blue and white color to links */
+  a {
+    color: #007BFF;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
