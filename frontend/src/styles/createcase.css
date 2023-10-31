@@ -28,21 +28,20 @@
     font-weight: bold;
   }
   
-  .form-field input[type="text"],
-  .form-field input[type="date"],
-  .form-field textarea {
+  .form-field {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     border-radius: 5px;
+    color: rgb(0, 0, 0);
   }
   
   .form-button {
     display: block;
     margin: 10px 0;
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #cdd6df;
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;

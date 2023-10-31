@@ -246,6 +246,7 @@ class AssetTransfer extends Contract {
 
   //create asset function
   async CreateAsset(ctx, caseDetails) {
+    const objectCaseDetails = JSON.parse(caseDetails)
     const {
       ID,
       prosecutorDetails: {
@@ -294,7 +295,7 @@ class AssetTransfer extends Contract {
       hearings,
       currentHearing,
       Notes,
-    } = caseDetails;
+    } = objectCaseDetails
 
     const exists = await this.AssetExists(ctx, ID);
     if (exists) {

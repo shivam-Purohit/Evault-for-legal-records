@@ -34,7 +34,7 @@ const CreateCase = () => {
         Name: "",
       },
     },
-    HearingDate: "",
+    HearingDate: "2023-12-12",
     Documents: {
       clientDocuments: {
         procecutionDocuments: "",
@@ -65,32 +65,44 @@ const CreateCase = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleHearingChange = (event, index) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => {
-      const newHearings = [...prevData.hearings];
-      newHearings[index] = {
-        ...newHearings[index],
+    const names = name.split('.');
+    
+    if (names.length === 1) {
+      setFormData({
+        ...formData,
         [name]: value,
-      };
-      return {
-        ...prevData,
-        hearings: newHearings,
-      };
-    });
+      });
+    } else if (names.length === 2) {
+      const [section, field] = names;
+      setFormData({
+        ...formData,
+        [section]: {
+          ...formData[section],
+          [field]: value,
+        },
+      });
+    } else if (names.length === 3) {
+      const [section, subsection, field] = names;
+      setFormData({
+        ...formData,
+        [section]: {
+          ...formData[section],
+          [subsection]: {
+            ...formData[section][subsection],
+            [field]: value,
+          },
+        },
+      });
+    }
   };
+  
 
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Send the formData to the backend route (replace with your actual API endpoint)
-    const response = await fetch("http://localhost:8002/your-backend-route", {
+    const response = await fetch("http://localhost:8002/admin/add-case", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -307,83 +319,7 @@ const CreateCase = () => {
       
       </div>
   </div>
-     
-<div className="form-section">
-  <h3 className="form-section-title">Hearings</h3>
-  {formData.hearings.map((hearing, index) => (
-    <div className="form-subsection" key={index}>
-      <h4 className="form-subsection-title">Hearing {index + 1}</h4>
-      <input
-        className="form-field"
-        type="text"
-        name={`hearings[${index}].hearingNumber`}
-        value={hearing.hearingNumber}
-        onChange={(event) => handleHearingChange(event, index)}
-        placeholder="Hearing Number"
-      />
-      <input
-        className="form-field"
-        type="date"
-        name={`hearings[${index}].date`}
-        value={hearing.date}
-        onChange={(event) => handleHearingChange(event, index)}
-        placeholder="Hearing Date"
-      />
-      <input
-        className="form-field"
-        type="text"
-        name={`hearings[${index}].details`}
-        value={hearing.details}
-        onChange={(event) => handleHearingChange(event, index)}
-        placeholder="Details"
-      />
-      <input
-        className="form-field"
-        type="text"
-        name={`hearings[${index}].verdict`}
-        value={hearing.verdict}
-        onChange={(event) => handleHearingChange(event, index)}
-        placeholder="Verdict"
-      />
-    </div>
-  ))}
-</div>
-
-<div className="form-section">
-  <h3 className="form-section-title">Current Hearing</h3>
-  <input
-    className="form-field"
-    type="text"
-    name="currentHearing.hearingNumber"
-    value={formData.currentHearing.hearingNumber}
-    onChange={handleInputChange}
-    placeholder="Hearing Number"
-  />
-  <input
-    className="form-field"
-    type="date"
-    name="currentHearing.date"
-    value={formData.currentHearing.date}
-    onChange={handleInputChange}
-    placeholder="Hearing Date"
-  />
-  <input
-    className="form-field"
-    type="text"
-    name="currentHearing.details"
-    value={formData.currentHearing.details}
-    onChange={handleInputChange}
-    placeholder="Details"
-  />
-  <input
-    className="form-field"
-    type="text"
-    name="currentHearing.verdict"
-    value={formData.currentHearing.verdict}
-    onChange={handleInputChange}
-    placeholder="Verdict"
-  />
-</div>
+  
 
 <div className="form-section">
   <label className="form-label">Notes:</label>
