@@ -7,7 +7,7 @@ const {handleGetAdmin, handleAdminPost} = require("../controllers/admin.js")
 
 adminRouter.get("/:id", handleGetAdmin)
 
-adminRouter.post("/add-client", handleAdminPost)
+adminRouter.post("/add-case", handleAdminPost)
 
 module.exports =adminRouter
 

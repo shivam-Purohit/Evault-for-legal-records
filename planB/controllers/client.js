@@ -1,7 +1,13 @@
 const {initialize, prettyJSONString, handleS3Upload} = require("../utils/utils.js")
 const AWS = require('aws-sdk');
 const dummyUser = {
-  userId: "123456",
+  userId1: "client1",
+  userId2: "client2",
+  userId3:"client3",
+  userId4: "admin1",
+  userId5: "admin2",
+  userId6: "attorney1",
+  userId7:"attorney2",
   password: "pass",
 };
 
@@ -16,9 +22,9 @@ const handleGetClient = async (req, res) => {
       const contract = network.getContract(process.env.CC_NAME);
       // await contract.submitTransaction('InitLedger');
       const caseDetails = await contract.evaluateTransaction("ReadAsset", caseId);
-      console.log(caseDetails)
+      console.log(JSON.parse(caseDetails))
       const parsedResult = JSON.parse(caseDetails.toString());
-      console.log(parsedResult.documents.clientDocuments.defenderDocuments[0])
+      // console.log(parsedResult.documents.clientDocuments.defenderDocuments[0])
       res.send(JSON.stringify(parsedResult))
     } catch (error) {
       console.error(`Error: ${error}`);
@@ -30,7 +36,7 @@ const handleGetClient = async (req, res) => {
 
 const handlePostClient = async(req,res)=>{
 
-  const userId = dummyUser.userId;
+  const userId = dummyUser.userId1;
   const caseId = dummyUser.caseId;
   const file = req.file;
   if (!file)  return res.status(400).send('No file uploaded.');
@@ -47,7 +53,6 @@ const handlePostClient = async(req,res)=>{
     const parsedResult = JSON.parse(caseDetails);
     console.log(parsedResult.prosecutorDetails.Id)
     if(parsedResult.prosecutorDetails.Id==121) {
-       console.log("here")
        parsedResult.documents.clientDocuments.defenderDocuments.push(fileUrl)
     }
     else if(parsedResult.defenderDetails.Id==userId){
