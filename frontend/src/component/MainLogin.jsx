@@ -54,29 +54,7 @@ const MainLogin = () => {
       headers: headers,
       body: JSON.stringify(payload),
     };
-  // const [file, setFile] = useState(null);
-
-  // const handleFileChange = (e) => {
-  //   const selectedFile = e.target.files[0];
-  //   setFile(selectedFile);
-  // };
-
-  // const handleUpload = () => {
-  //   const formData = new FormData();
-  //   formData.append('file', file);
-
-  //   fetch('/upload', {
-  //     method: 'POST',
-  //     body: formData,
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log('File uploaded successfully:', data);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error uploading file:', error);
-  //     });
-  // };
+  
   
     try {
       const response = await fetch(url, requestOptions);
