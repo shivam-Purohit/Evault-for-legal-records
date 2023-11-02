@@ -63,10 +63,10 @@ async function handleS3Upload(file){
   const fileStream = fs.createReadStream(file.path);
 
   const params = {
-    Bucket: 'myawsbucket0510sank/user_uploads',
+    Bucket: 'myawsbucket0510sank/sih_uploads',
     Key: uniqueFilename,
     Body: fileStream,
-    ContentType: 'image/png', // Set the content type for the browser to understand the file type
+    ContentType: 'application/pdf', // Set the content type for the browser to understand the file type
     ContentDisposition: 'inline', // Display the file in the browser
   };
   
