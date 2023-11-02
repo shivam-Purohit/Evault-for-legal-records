@@ -9,8 +9,7 @@ const handleGetAdmin = async (req, res) => {
   const gateway = await initialize(adminId)
   const network = await gateway.getNetwork(process.env.CHANNEL_NAME);
   const contract = network.getContract(process.env.CC_NAME);
-
-  // await contract.submitTransaction('InitLedger');
+  await contract.submitTransaction('InitLedger');
   const caseDetails = await contract.evaluateTransaction("GetAllAssets");
   const parsedResult = JSON.parse(caseDetails.toString());
   console.log(parsedResult);
